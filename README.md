@@ -1,6 +1,16 @@
 # React + Vite
+# Project Gallery (Part 1)
 
+This is a React project where I built a portfolio detail page.
+
+## What I learned
+
+- React components
+- Props
+- useState
+- Conditional rendering
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+___________________________________________________
 
 Currently, two official plugins are available:
 
