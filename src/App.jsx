@@ -4,7 +4,7 @@ import { PortfolioItemPage } from "./pages/PortfolioItemPage";
 import { PortfolioPage } from "./pages/PortfolioPage";
 
 export const App = () => {
-  const [selectedItem, setSelectedItem] = useState();
+  const [selectedItem] = useState(portfolioItems[0]);
 
   return (
     <>
