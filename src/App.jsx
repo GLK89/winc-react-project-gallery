@@ -1,17 +1,29 @@
 import { useState } from "react";
+import { portfolioItems } from "./utils/data";
 import { PortfolioItemPage } from "./pages/PortfolioItemPage";
 import { PortfolioPage } from "./pages/PortfolioPage";
+import { Header } from "./components/ui/Header";
+import { Box } from "@chakra-ui/react";
 
 export const App = () => {
-  const [selectedItem] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   return (
     <>
-      {selectedItem ? (
-        <PortfolioItemPage item={selectedItem} />
-      ) : (
-        <PortfolioPage />
-      )}
+      <Header />
+      <Box pt={4}>
+        {selectedItem ? (
+          <PortfolioItemPage
+            item={selectedItem}
+            setSelectedItem={setSelectedItem}
+          />
+        ) : (
+          <PortfolioPage
+            portfolioItems={portfolioItems}
+            setSelectedItem={setSelectedItem}
+          />
+        )}
+      </Box>
     </>
   );
 };

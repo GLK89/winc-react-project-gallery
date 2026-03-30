@@ -1,6 +1,6 @@
 import { Box, Image, Heading, Text, Stack, Flex } from "@chakra-ui/react";
 
-export const PortfolioItemCard = ({ item }) => {
+export const PortfolioItemCard = ({ item, setSelectedItem }) => {
   return (
     <Box
       maxW="sm"
@@ -9,6 +9,10 @@ export const PortfolioItemCard = ({ item }) => {
       boxShadow="md"
       borderWidth="1px"
       bg="white"
+      cursor="pointer"
+      onClick={() => setSelectedItem(item)}
+      _hover={{ transform: "scale(1.02)", boxShadow: "lg" }}
+      transition="0.2s"
     >
       <Stack gap={4}>
         <Image src={item.imageUrl} alt={item.title} borderRadius="lg" />
