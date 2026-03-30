@@ -6,9 +6,10 @@ export const PortfolioItemCard = ({ item, setSelectedItem }) => {
       maxW="sm"
       p={4}
       borderRadius="xl"
-      boxShadow="md"
+      boxShadow={{ _light: "md", _dark: "lg" }}
       borderWidth="1px"
-      bg="white"
+      borderColor={{ _light: "gray.200", _dark: "gray.600" }}
+      bg={{ _light: "white", _dark: "gray.800" }}
       cursor="pointer"
       onClick={() => setSelectedItem(item)}
       _hover={{ transform: "scale(1.02)", boxShadow: "lg" }}
@@ -17,9 +18,13 @@ export const PortfolioItemCard = ({ item, setSelectedItem }) => {
       <Stack gap={4}>
         <Image src={item.imageUrl} alt={item.title} borderRadius="lg" />
 
-        <Heading size="md">{item.title}</Heading>
+        <Heading size="md" color={{ _light: "black", _dark: "white" }}>
+          {item.title}
+        </Heading>
 
-        <Text>{item.summary}</Text>
+        <Text color={{ _light: "gray.700", _dark: "gray.200" }}>
+          {item.summary}
+        </Text>
 
         <Flex wrap="wrap" gap={2}>
           {item.skills.map((skill) => (
@@ -28,7 +33,8 @@ export const PortfolioItemCard = ({ item, setSelectedItem }) => {
               px={3}
               py={1}
               borderRadius="md"
-              bg="blue.100"
+              bg={{ _light: "blue.100", _dark: "blue.700" }}
+              color={{ _light: "black", _dark: "white" }}
               fontSize="sm"
             >
               {skill}
