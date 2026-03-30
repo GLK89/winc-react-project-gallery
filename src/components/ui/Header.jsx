@@ -1,4 +1,5 @@
 import { Box, Button, Flex, Heading } from "@chakra-ui/react";
+import { ColorModeToggle } from "./ColorModeToggle";
 
 export const Header = () => {
   return (
@@ -19,6 +20,8 @@ export const Header = () => {
           <Button variant="ghost">Projects</Button>
           <Button variant="ghost">About</Button>
           <Button variant="ghost">Contact</Button>
+
+          <ColorModeToggle />
         </Flex>
       </Flex>
     </Box>
